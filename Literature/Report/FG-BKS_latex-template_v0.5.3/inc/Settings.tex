@@ -1,0 +1,79 @@
+%% \CharacterTable
+%%  {Upper-case    \A\B\C\D\E\F\G\H\I\J\K\L\M\N\O\P\Q\R\S\T\U\V\W\X\Y\Z
+%%   Lower-case    \a\b\c\d\e\f\g\h\i\j\k\l\m\n\o\p\q\r\s\t\u\v\w\x\y\z
+%%   Digits        \0\1\2\3\4\5\6\7\8\9
+%%   Exclamation   \!     Double quote  \"     Hash (number) \#
+%%   Dollar        \$     Percent       \%     Ampersand     \&
+%%   Acute accent  \'     Left paren    \(     Right paren   \)
+%%   Asterisk      \*     Plus          \+     Comma         \,
+%%   Minus         \-     Point         \.     Solidus       \/
+%%   Colon         \:     Semicolon     \;     Less than     \<
+%%   Equals        \=     Greater than  \>     Question mark \?
+%%   Commercial at \@     Left bracket  \[     Backslash     \\
+%%   Right bracket \]     Circumflex    \^     Underscore    \_
+%%   Grave accent  \`     Left brace    \{     Vertical bar  \|
+%%   Right brace   \}     Tilde         \~}
+
+
+\lstset{basicstyle=\small,
+	tabsize=2,
+	basewidth={0.5em,0.45em},
+	extendedchars=true}
+\usepackage{amsmath}	               % Mathematik
+\usepackage{hyperref}       
+\hypersetup{
+	bookmarksopen=true,
+	bookmarksopenlevel=3,
+	citecolor=black,
+	linkcolor=black
+}
+
+\usepackage{scrhack}				% unterdrueckt Fehlermeldung von listings
+
+%% Verzeichnisse
+\usepackage{tocstyle} 
+\usetocstyle{KOMAlike}
+\KOMAoptions{open=any}
+
+
+%% Nummerierungstiefen
+\setcounter{tocdepth}{3}             % 3 Stufen im Inhaltsverzeichnis
+\setcounter{secnumdepth}{3} 		     % 3 Stufen in Abschnittnummerierung
+
+%% Seitenabstaende
+
+\setlength{\footskip}{40pt}
+\usepackage[
+  top=25mm,
+  bottom=20mm,
+  left=30mm,
+  right=30mm,
+  asymmetric,
+  %oneside,
+]{geometry}
+
+%% Header
+\fancypagestyle{plain}{%
+  \fancyhf{}%
+  \fancyhead[R]{\thepage}
+  \fancyhead[L]{\rightmark}
+  %\fancyhead[RO,LE]{\thepage}
+  %\fancyhead[LO]{\leftmark}
+  %\fancyhead[RE]{\rightmark}
+}
+\renewcommand{\chapterheadstartvskip}{\vspace*{1\baselineskip}} %resetting upper margin
+
+%%Bibliography
+\bibliographystyle{agsm} % Harvard Stil
+
+%%Fonts
+%\renewcommand{\rmdefault}{Cambria}
+%\sffamily
+
+%%TODO
+\newcommand\TODO[1]{\textcolor{magenta}{\framebox{todo:} #1}}
+
+%%More Citations
+\providecommand{\citeTwo}[4]{\citep[{\citealp[#1]{#2};}][#3]{#4}} 
+\providecommand{\citeThree}[6]{\citep[{\citealp[#1]{#2}; \citealp[#3]{#4};}][#5]{#6}} 
+\providecommand{\citeFour}[8]{\citep[{\citealp[#1]{#2}; \citealp[#3]{#4}; \citealp[#5]{#6};}][#7]{#8}}
